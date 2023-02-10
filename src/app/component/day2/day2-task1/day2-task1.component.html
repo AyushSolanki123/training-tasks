@@ -2,7 +2,8 @@
   <div class="heading text-center">
     <h2>
       Problem Statement: Use the directive ngFor to create a list of product
-      displayed in tabular format
+      displayed in tabular format and remove those products whose status is not
+      completed
     </h2>
   </div>
 
@@ -18,13 +19,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of products">
-          <td>{{ product.orderId }}</td>
-          <td>{{ product.productName }}</td>
-          <td>{{ product.quantity }}</td>
-          <td>{{ product.billAmount }}</td>
-          <td>{{ product.transaction }}</td>
-        </tr>
+        <ng-container *ngFor="let product of products">
+          <tr *ngIf="product.transaction === 'completed'">
+            <td>{{ product.orderId }}</td>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.billAmount }}</td>
+            <td>{{ product.transaction }}</td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
   </div>
