@@ -3,11 +3,11 @@ import { Task } from '../Task';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-task-item',
-  templateUrl: './task-item.component.html',
-  styleUrls: ['./task-item.component.scss'],
+  selector: 'app-day-card',
+  templateUrl: './day-card.component.html',
+  styleUrls: ['./day-card.component.scss'],
 })
-export class TaskItemComponent {
+export class DayCardComponent {
   @Input() task!: Task;
 
   constructor(private router: Router) {}
