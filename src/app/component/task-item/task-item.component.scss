@@ -1,0 +1,24 @@
+.day-card {
+  height: 15rem;
+  max-width: 30rem;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.day-card:hover {
+  border: 2px solid black;
+}
+
+.image-container {
+  min-width: 50%;
+  height: 10rem;
+}
+
+.task {
+  padding: 16px;
+}
+
+.task-item {
+  padding: 8px;
+}

@@ -12,16 +12,20 @@ export class HomeComponent {
       name: 'Day 1',
       route: '/day1',
       tasks: [
-        { id: 1, task: 'Data Binding' },
-        { id: 2, task: 'Event Binding' },
+        { id: 1, task: 'Data Binding', route: '/day1/task1' },
+        { id: 2, task: 'Event Binding', route: '/day1/task2' },
       ],
     },
     {
       name: 'Day 2',
       route: '/day2',
       tasks: [
-        { id: 1, task: 'Directive - ngFor' },
-        { id: 2, task: 'Custom Directive - Data Binding' },
+        { id: 1, task: 'Directive - ngFor', route: '/day2/task1' },
+        {
+          id: 2,
+          task: 'Custom Directive - Data Binding',
+          route: '/day2/task2',
+        },
       ],
     },
   ];

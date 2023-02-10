@@ -7,4 +7,5 @@ export class Task {
 export class TaskItem {
   id!: number;
   task!: string;
+  route!: string;
 }
