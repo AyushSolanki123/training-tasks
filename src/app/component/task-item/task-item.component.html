@@ -1,0 +1,15 @@
+<div class="day-card card clickable" (click)="navigate()">
+  <div class="row">
+    <div class="image-container col">
+      <img src="../../../assets/task.jpg" alt="task" class="image" />
+    </div>
+    <div class="task col">
+      <h2>{{ task.name }}</h2>
+      <ul>
+        <li class="task-item" *ngFor="let item of task.tasks">
+          {{ item.task }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
