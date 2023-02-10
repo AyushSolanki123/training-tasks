@@ -1,1 +1,8 @@
-<p>day1 works!</p>
+<div class="container-fluid">
+  <div
+    *ngFor="let item of data.tasks"
+    class="container-fluid row justify-content-start"
+  >
+    <app-task-item [task]="item" class="col"></app-task-item>
+  </div>
+</div>
