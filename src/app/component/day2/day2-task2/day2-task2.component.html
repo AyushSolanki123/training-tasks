@@ -10,25 +10,18 @@
     <div class="form">
       <div class="input-group">
         <label for="password">Password</label>
-        <input
-          type="text"
-          appPasswordCheck
-          [paswordCheck]="password"
-          id="password"
-          [(ngModel)]="password"
-        />
+        <input type="text" id="password" [(ngModel)]="password" />
+        <div appPasswordCheck [paswordCheck]="password"></div>
       </div>
       <div class="input-group">
         <label for="confirmPassword">Confirm Password</label> <br />
-        <input
-          type="text"
-          id="confirmPassword"
-          appPasswordCheck
-          [paswordCheck]="confirmPassword"
-          [confirmPasswordCheck]="password"
-          [(ngModel)]="confirmPassword"
-        />
+        <input type="text" id="confirmPassword" [(ngModel)]="confirmPassword" />
       </div>
+      <div
+        appConfirmPasswordCheck
+        [paswordCheck]="password"
+        [confirmPasswordCheck]="confirmPassword"
+      ></div>
     </div>
   </div>
 </div>

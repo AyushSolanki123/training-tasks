@@ -1,21 +1,17 @@
 import {
   Directive,
   ElementRef,
-  HostListener,
   Input,
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
 
 @Directive({
-  selector: '[appPasswordCheck]',
+  selector: '[appConfirmPasswordCheck]',
 })
-export class PasswordCheckDirective implements OnChanges {
+export class ConfirmPasswordCheckDirective implements OnChanges {
   @Input() paswordCheck!: string;
-
-  strongRegex =
-    /^(.*[A-Z].*)(.*[a-z].*)(.*\d.*)(.*[_@].*)*(.*[a-z].*)*(.*\d.*)*$/;
-  // strongRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_@])$/;
+  @Input() confirmPasswordCheck!: string;
   constructor(private elementRef: ElementRef) {
     this.elementRef.nativeElement.style.width = '100%';
     this.elementRef.nativeElement.style.padding = '8px';
@@ -26,24 +22,19 @@ export class PasswordCheckDirective implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.paswordCheck = changes['paswordCheck'].currentValue;
-    if (this.paswordCheck) {
+    if (this.paswordCheck && this.confirmPasswordCheck) {
       this.elementRef.nativeElement.style.visibility = 'visible';
-      if (this.strongRegex.test(this.paswordCheck)) {
+      if (this.paswordCheck === this.confirmPasswordCheck) {
         this.elementRef.nativeElement.style.backgroundColor = '#46e59b';
         this.elementRef.nativeElement.style.color = 'green';
-        this.elementRef.nativeElement.innerHTML = 'Strong Password';
+        this.elementRef.nativeElement.innerHTML = 'Passwords Match';
       } else {
         this.elementRef.nativeElement.style.backgroundColor = '#ff828e';
         this.elementRef.nativeElement.style.color = 'red';
-        this.elementRef.nativeElement.innerHTML = 'Weak Password';
+        this.elementRef.nativeElement.innerHTML = 'Passwords do not Match';
       }
     } else {
       this.elementRef.nativeElement.style.visibility = 'hidden';
     }
-  }
-
-  @HostListener('input') onInput() {
-    console.log(this.paswordCheck);
   }
 }
