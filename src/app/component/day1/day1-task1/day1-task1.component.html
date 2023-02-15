@@ -1,8 +1,17 @@
 <div class="container-fluid text-center">
-  <h2 class="text-warning">May I help you?</h2>
-  <h5>Enter the book name:</h5>
+  <div class="heading text-center">
+    <h2>
+      Problem Statement: Implement Data binding to bind the input field to a
+      data variable
+    </h2>
+  </div>
 
-  <input type="text" class="form-control" [(ngModel)]="name" />
+  <div class="card mt-5 p-3">
+    <h2 class="text-warning">May I help you?</h2>
+    <h5>Enter the book name:</h5>
 
-  <h5 class="text-warning">You are searching for: {{ name }}</h5>
+    <input type="text" class="form-control" [(ngModel)]="name" />
+
+    <h5 class="text-warning">You are searching for: {{ name }}</h5>
+  </div>
 </div>

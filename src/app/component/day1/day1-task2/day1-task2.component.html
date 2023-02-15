@@ -1,25 +1,38 @@
-<div class="container-fluid card login-card">
-  <h5 class="p-3 text-white bg-primary">Login</h5>
-  <div class="form p-3">
-    <div class="mb-3 row">
-      <label for="staticEmail" class="col-sm-2 col-form-label">User Name</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="username" />
-      </div>
-    </div>
-    <div class="mb-3 row">
-      <label for="staticEmail" class="col-sm-2 col-form-label">Password</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="password" />
-      </div>
-    </div>
-  </div>
-  <div class="submit p-3">
-    <button class="btn btn-primary" (click)="submit()">Login</button>
-    <button class="btn btn-link" (click)="reset()">Cancel</button>
+<div class="container-fluid">
+  <div class="heading text-center">
+    <h2>
+      Problem Statement: Create a login form and use event handling when login
+      button is clicked and show appropriate message
+    </h2>
   </div>
 
-  <div class="notify p-3 text-success h4 text-center" *ngIf="success">
-    Login Successful!!
+  <div class="card login-card mt-5">
+    <h5 class="p-3 text-white bg-primary">Login</h5>
+    <div class="form p-3">
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"
+          >User Name</label
+        >
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [(ngModel)]="username" />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"
+          >Password</label
+        >
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [(ngModel)]="password" />
+        </div>
+      </div>
+    </div>
+    <div class="submit p-3">
+      <button class="btn btn-primary" (click)="submit()">Login</button>
+      <button class="btn btn-link" (click)="reset()">Cancel</button>
+    </div>
+
+    <div class="notify p-3 text-success h4 text-center" *ngIf="success">
+      Login Successful!!
+    </div>
   </div>
 </div>
