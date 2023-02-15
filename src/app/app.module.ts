@@ -12,6 +12,19 @@ import { Day1Task2Component } from './component/day1/day1-task2/day1-task2.compo
 import { Day2Task1Component } from './component/day2/day2-task1/day2-task1.component';
 import { Day2Task2Component } from './component/day2/day2-task2/day2-task2.component';
 import { TaskItemComponent } from './component/task-item/task-item.component';
+import { FormsModule } from '@angular/forms';
+import { PasswordCheckDirective } from './component/day2/day2-task2/password-check.directive';
+import { Day3Component } from './component/day3/day3.component';
+import { Day3Task1Component } from './component/day3/day3-task1/day3-task1.component';
+import { Day3Task2Component } from './component/day3/day3-task2/day3-task2.component';
+import { Day3Task3Component } from './component/day3/day3-task3/day3-task3.component';
+import { Day4Component } from './component/day4/day4.component';
+import { Day4Task1Component } from './component/day4/day4-task1/day4-task1.component';
+import { Day4Task2Component } from './component/day4/day4-task2/day4-task2.component';
+import { Day4Task3Component } from './component/day4/day4-task3/day4-task3.component';
+import { Day5Component } from './component/day5/day5.component';
+import { Day5Task1Component } from './component/day5/day5-task1/day5-task1.component';
+import { ListTaskItemsComponent } from './component/list-task-items/list-task-items.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +38,20 @@ import { TaskItemComponent } from './component/task-item/task-item.component';
     Day2Task2Component,
     DayCardComponent,
     TaskItemComponent,
+    PasswordCheckDirective,
+    Day3Component,
+    Day3Task1Component,
+    Day3Task2Component,
+    Day3Task3Component,
+    Day4Component,
+    Day4Task1Component,
+    Day4Task2Component,
+    Day4Task3Component,
+    Day5Component,
+    Day5Task1Component,
+    ListTaskItemsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

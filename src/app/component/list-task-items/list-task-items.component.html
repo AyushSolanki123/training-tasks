@@ -1,8 +1,8 @@
 <div class="container-fluid row">
   <div
-    *ngFor="let item of data"
+    *ngFor="let item of data.tasks"
     class="container-fluid col-lg-3 col-md-4 col-sm-6"
   >
-    <app-day-card [task]="item"></app-day-card>
+    <app-task-item [task]="item"></app-task-item>
   </div>
 </div>

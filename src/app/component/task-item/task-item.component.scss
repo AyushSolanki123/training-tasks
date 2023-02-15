@@ -1,8 +1,6 @@
 .day-card {
-  height: 15rem;
-  max-width: 30rem;
-  display: flex;
-  justify-content: center;
+  min-width: 18rem;
+  max-height: 21rem;
   padding: 16px;
 }
 
@@ -11,7 +9,6 @@
 }
 
 .image-container {
-  min-width: 50%;
   height: 10rem;
 }
 
@@ -21,4 +18,13 @@
 
 .task-item {
   padding: 8px;
+}
+
+.product-card-image {
+  height: 10rem;
+  max-width: 10rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
