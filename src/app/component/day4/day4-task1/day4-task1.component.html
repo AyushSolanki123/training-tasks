@@ -1,1 +1,19 @@
-<p>day4-task1 works!</p>
+<div class="container-fluid">
+  <div class="heading text-center">
+    <h2>
+      Problem Statement: Loading CourseslistComponent in the root component when
+      the user clicks on the View courses list button
+    </h2>
+  </div>
+
+  <div class="card m-a constrain p-3">
+    <h3>Popular Courses</h3>
+    <button class="btn btn-primary" (click)="show = true">
+      View Courses List
+    </button>
+
+    <div *ngIf="show">
+      <app-course-list></app-course-list>
+    </div>
+  </div>
+</div>
