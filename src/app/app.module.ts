@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { DayCardComponent } from './component/day-card/day-card.component';
@@ -12,7 +15,6 @@ import { Day1Task2Component } from './component/day1/day1-task2/day1-task2.compo
 import { Day2Task1Component } from './component/day2/day2-task1/day2-task1.component';
 import { Day2Task2Component } from './component/day2/day2-task2/day2-task2.component';
 import { TaskItemComponent } from './component/task-item/task-item.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordCheckDirective } from './component/day2/day2-task2/password-check.directive';
 import { Day3Component } from './component/day3/day3.component';
 import { Day3Task1Component } from './component/day3/day3-task1/day3-task1.component';
@@ -63,7 +65,13 @@ import { DemoComponent } from './component/day5/day5-task1/demo/demo.component';
     Day5Task2Component,
     DemoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
