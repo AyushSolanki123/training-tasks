@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <h4>Child Component</h4>
+  Counter from Parent: {{ count }}
+
+  <div class="row">
+    <button class="col-5 btn btn-secondary" (click)="increment()">
+      Increment By 5
+    </button>
+
+    <button class="btn col-5 btn-primary" (click)="output()">
+      Send Data to Parent
+    </button>
+  </div>
+</div>
