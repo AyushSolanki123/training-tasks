@@ -18,6 +18,7 @@ import { Day5Component } from './component/day5/day5.component';
 import { Day5Task1Component } from './component/day5/day5-task1/day5-task1.component';
 import { HomeComponent } from './component/home/home.component';
 import { Day5Task2Component } from './component/day5/day5-task2/day5-task2.component';
+import { DemoComponent } from './component/day5/day5-task1/demo/demo.component';
 
 const routes: Routes = [
   {
@@ -62,7 +63,13 @@ const routes: Routes = [
     path: 'day5',
     children: [
       { path: '', component: Day5Component },
-      { path: 'task1', component: Day5Task1Component },
+      {
+        path: 'task1',
+        children: [
+          { path: '', component: Day5Task1Component },
+          { path: 'demo', component: DemoComponent },
+        ],
+      },
       { path: 'task2', component: Day5Task2Component },
     ],
   },

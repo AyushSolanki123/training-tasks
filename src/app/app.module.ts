@@ -30,6 +30,7 @@ import { CourseListComponent } from './component/day4/day4-task1/course-list/cou
 import { ListComponent } from './component/day4/day4-task2/list/list.component';
 import { ChildComponent } from './component/day4/day4-task3/child/child.component';
 import { Day5Task2Component } from './component/day5/day5-task2/day5-task2.component';
+import { DemoComponent } from './component/day5/day5-task1/demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { Day5Task2Component } from './component/day5/day5-task2/day5-task2.compo
     ListComponent,
     ChildComponent,
     Day5Task2Component,
+    DemoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
