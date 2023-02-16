@@ -1,1 +1,76 @@
-<p>day3-task3 works!</p>
+<div class="container-fluid">
+  <div class="heading text-center">
+    <h2>
+      Problem Statement: Create a service and use that to update th Employee
+      details
+    </h2>
+  </div>
+
+  <div class="card update-form p-3">
+    <h2>Update Employee</h2>
+    <div class="form">
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"
+          >Employee Id</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="id"
+            name="username"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"
+          >Employee Name</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="name"
+            name="username"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"
+          >Employee Age</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="age"
+            name="username"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="submit">
+      <button class="btn btn-primary" (click)="submit()">Submit</button>
+    </div>
+  </div>
+
+  <div class="card display my-5">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Emp Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of employees">
+          <td>{{ item.empId }}</td>
+          <td>{{ item.empName }}</td>
+          <td>{{ item.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
