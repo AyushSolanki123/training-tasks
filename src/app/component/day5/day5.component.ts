@@ -16,6 +16,11 @@ export class Day5Component {
         task: 'Routing',
         route: '/day5/task1',
       },
+      {
+        id: 2,
+        task: 'Observable Service',
+        route: '/day5/task2',
+      },
     ],
   };
 }
