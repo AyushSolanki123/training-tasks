@@ -27,6 +27,7 @@ import { Day5Task1Component } from './component/day5/day5-task1/day5-task1.compo
 import { ListTaskItemsComponent } from './component/list-task-items/list-task-items.component';
 import { ConfirmPasswordCheckDirective } from './component/day2/day2-task2/confirm-password-check.directive';
 import { CourseListComponent } from './component/day4/day4-task1/course-list/course-list.component';
+import { ListComponent } from './component/day4/day4-task2/list/list.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { CourseListComponent } from './component/day4/day4-task1/course-list/cou
     ListTaskItemsComponent,
     ConfirmPasswordCheckDirective,
     CourseListComponent,
+    ListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

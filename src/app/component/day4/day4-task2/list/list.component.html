@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Course Id</th>
+        <th scope="col">Course Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of courses">
+        <td *ngIf="item.courseName === cName">{{ item.courseId }}</td>
+        <td *ngIf="item.courseName === cName">{{ item.courseName }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
