@@ -1,1 +1,92 @@
-<p>day3-task1 works!</p>
+<div class="container-fluid">
+  <div class="heading text-center">
+    <h2>
+      Problem Statement: Use the Reactive forms to create a Registration form
+      and display the details after submitting the form
+    </h2>
+  </div>
+
+  <div class="card registration-card p-3">
+    <h2>Registration Form</h2>
+
+    <div class="form" [formGroup]="registerForm">
+      <div>
+        <div class="input">
+          <label for="fName" class="form-label">First Name</label> <br />
+          <input
+            id="fName"
+            type="text"
+            class="form-control"
+            formControlName="fName"
+          />
+          <p
+            *ngIf="registerForm.controls['fName'].errors"
+            class="alert alert-danger"
+          >
+            This field is required!
+          </p>
+        </div>
+        <div class="input">
+          <label for="lName" class="form-label">Last Name</label> <br />
+          <input
+            id="lName"
+            type="text"
+            class="form-control"
+            formControlName="lName"
+          />
+          <p
+            *ngIf="registerForm.controls['lName'].errors"
+            class="alert alert-danger"
+          >
+            This field is required!
+          </p>
+        </div>
+        <div formGroupName="address">
+          <div class="input">
+            <label for="street" class="form-label">Street</label> <br />
+            <input
+              id="street"
+              type="text"
+              class="form-control"
+              formControlName="street"
+            />
+          </div>
+          <div class="input">
+            <label for="zip" class="form-label">ZIP</label> <br />
+            <input
+              id="zip"
+              type="text"
+              class="form-control"
+              formControlName="zip"
+            />
+          </div>
+          <div class="input">
+            <label for="city" class="form-label">City</label> <br />
+            <input
+              id="city"
+              type="text"
+              class="form-control"
+              formControlName="city"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit my-3">
+      <button class="btn btn-primary" (click)="isSubmit = true">Submit</button>
+    </div>
+
+    <div class="details" *ngIf="isSubmit">
+      <h2>Employee Details</h2>
+
+      <div>
+        <span>First Name: {{ fName }} </span> <br />
+        <span>Last Name: {{ lName }} </span> <br />
+        <span>Street: {{ address.street }} </span> <br />
+        <span>ZIP: {{ address.zip }} </span> <br />
+        <span>City: {{ address.city }} </span> <br />
+      </div>
+    </div>
+  </div>
+</div>

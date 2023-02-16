@@ -12,7 +12,7 @@ import { Day1Task2Component } from './component/day1/day1-task2/day1-task2.compo
 import { Day2Task1Component } from './component/day2/day2-task1/day2-task1.component';
 import { Day2Task2Component } from './component/day2/day2-task2/day2-task2.component';
 import { TaskItemComponent } from './component/task-item/task-item.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordCheckDirective } from './component/day2/day2-task2/password-check.directive';
 import { Day3Component } from './component/day3/day3.component';
 import { Day3Task1Component } from './component/day3/day3-task1/day3-task1.component';
@@ -53,7 +53,7 @@ import { ConfirmPasswordCheckDirective } from './component/day2/day2-task2/confi
     ListTaskItemsComponent,
     ConfirmPasswordCheckDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
