@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
@@ -38,6 +38,19 @@ import { Day6Component } from './component/day6/day6.component';
 import { Day6Task1Component } from './component/day6/day6-task1/day6-task1.component';
 import { Day6Task2Component } from './component/day6/day6-task2/day6-task2.component';
 import { reducers } from './component/day6/store';
+
+export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
+  return function (state, action) {
+    console.log('previous state:', state);
+    console.log('action: ', action);
+    let nextState = reducer(state, action);
+    console.log('current state: ', state);
+    return nextState;
+  };
+}
+
+export const metaReducers: MetaReducer<any>[] = [debug];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +91,7 @@ import { reducers } from './component/day6/store';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, { metaReducers }),
   ],
   providers: [],
   bootstrap: [AppComponent],
