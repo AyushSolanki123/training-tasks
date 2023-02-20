@@ -37,8 +37,7 @@ import { DemoComponent } from './component/day5/day5-task1/demo/demo.component';
 import { Day6Component } from './component/day6/day6.component';
 import { Day6Task1Component } from './component/day6/day6-task1/day6-task1.component';
 import { Day6Task2Component } from './component/day6/day6-task2/day6-task2.component';
-import { counterReducer } from './component/day6/day6-task1/store/reducers/counter.reducers';
-
+import { reducers } from './component/day6/store';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +78,7 @@ import { counterReducer } from './component/day6/day6-task1/store/reducers/count
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ counter: counterReducer }),
+    StoreModule.forRoot(reducers),
   ],
   providers: [],
   bootstrap: [AppComponent],

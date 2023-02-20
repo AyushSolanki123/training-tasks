@@ -7,11 +7,11 @@ import {
   multiply,
 } from '../actions/counter.actions';
 
-export interface State {
+export interface CounterState {
   counter: number;
 }
 
-export const initialState: State = {
+export const initialState: CounterState = {
   counter: 0,
 };
 

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as fromRoot from './store/selectors/counter.selectors';
 import {
   decrement,
   increment,
   multiply,
   multiplyby2,
   reset,
-} from './store/actions/counter.actions';
+} from '../store/actions/counter.actions';
+import { AppState } from '../store/index';
+import { selectCounter } from '../store/selectors/counter.selectors';
 
 @Component({
   selector: 'app-day6-task1',
@@ -19,10 +20,11 @@ export class Day6Task1Component implements OnInit {
   count$: Observable<any> | undefined;
   multiplyBy!: number;
 
-  constructor(private store: Store<fromRoot.AppState>) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
-    this.count$ = this.store.pipe(select(fromRoot.selectFeatureCount));
+    this.count$ = this.store.select(selectCounter);
+    console.log(this.count$);
   }
 
   increment() {
