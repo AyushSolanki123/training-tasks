@@ -1,1 +1,30 @@
-<p>day6-task2 works!</p>
+<div class="container-fluid">
+  <div class="heading text-center">
+    <h2>
+      Problem Statement: Create a component which uses ngRx Effects to make API
+      call for loading the list of products in success case and displays error
+      message if data not found
+    </h2>
+  </div>
+
+  <div class="card m-a p-3 mt-5">
+    <div class="row mt-4 text-center" style="font-family: cursive">
+      <div
+        class="col-md-3"
+        *ngFor="let product of products$ | async; let i = index"
+      >
+        <div class="card shadow">
+          <img src="{{ product.productImg }}" alt="{{ product.productName }}" />
+          <div class="card-body">
+            <h5>{{ product.productName }}</h5>
+            <h6>Brand: {{ product.productBrand }}</h6>
+            <h6 class="text text-success">
+              Price: {{ product.productPrice | currency : "INR" }}
+            </h6>
+          </div>
+        </div>
+      </div>
+      <span *ngIf="errorMessage$">{{ errorMessage$ | async }}</span>
+    </div>
+  </div>
+</div>

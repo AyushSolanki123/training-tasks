@@ -18,8 +18,13 @@ export class Day6Component {
       },
       {
         id: 2,
-        task: 'Store - CRUD Actions',
+        task: 'Store - ngRx Effects',
         route: '/day6/task2',
+      },
+      {
+        id: 3,
+        task: 'Store - CRUD Actions',
+        route: '/day6/task3',
       },
     ],
   };

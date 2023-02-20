@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
@@ -38,6 +39,8 @@ import { Day6Component } from './component/day6/day6.component';
 import { Day6Task1Component } from './component/day6/day6-task1/day6-task1.component';
 import { Day6Task2Component } from './component/day6/day6-task2/day6-task2.component';
 import { reducers } from './component/day6/store';
+import { ProductEffects } from './component/day6/store/effects/product.effects';
+import { Day6Task3Component } from './component/day6/day6-task3/day6-task3.component';
 
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function (state, action) {
@@ -84,6 +87,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     Day6Component,
     Day6Task1Component,
     Day6Task2Component,
+    Day6Task3Component,
   ],
   imports: [
     BrowserModule,
@@ -92,6 +96,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([ProductEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
