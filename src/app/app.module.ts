@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
@@ -33,6 +34,10 @@ import { ListComponent } from './component/day4/day4-task2/list/list.component';
 import { ChildComponent } from './component/day4/day4-task3/child/child.component';
 import { Day5Task2Component } from './component/day5/day5-task2/day5-task2.component';
 import { DemoComponent } from './component/day5/day5-task1/demo/demo.component';
+import { Day6Component } from './component/day6/day6.component';
+import { Day6Task1Component } from './component/day6/day6-task1/day6-task1.component';
+import { Day6Task2Component } from './component/day6/day6-task2/day6-task2.component';
+import { counterReducer } from './component/day6/day6-task1/store/reducers/counter.reducers';
 
 @NgModule({
   declarations: [
@@ -64,6 +69,9 @@ import { DemoComponent } from './component/day5/day5-task1/demo/demo.component';
     ChildComponent,
     Day5Task2Component,
     DemoComponent,
+    Day6Component,
+    Day6Task1Component,
+    Day6Task2Component,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +79,7 @@ import { DemoComponent } from './component/day5/day5-task1/demo/demo.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({ counter: counterReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent],

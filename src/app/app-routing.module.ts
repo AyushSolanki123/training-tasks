@@ -19,6 +19,9 @@ import { Day5Task1Component } from './component/day5/day5-task1/day5-task1.compo
 import { HomeComponent } from './component/home/home.component';
 import { Day5Task2Component } from './component/day5/day5-task2/day5-task2.component';
 import { DemoComponent } from './component/day5/day5-task1/demo/demo.component';
+import { Day6Component } from './component/day6/day6.component';
+import { Day6Task1Component } from './component/day6/day6-task1/day6-task1.component';
+import { Day6Task2Component } from './component/day6/day6-task2/day6-task2.component';
 
 const routes: Routes = [
   {
@@ -71,6 +74,14 @@ const routes: Routes = [
         ],
       },
       { path: 'task2', component: Day5Task2Component },
+    ],
+  },
+  {
+    path: 'day6',
+    children: [
+      { path: '', component: Day6Component },
+      { path: 'task1', component: Day6Task1Component },
+      { path: 'task2', component: Day6Task2Component },
     ],
   },
   {

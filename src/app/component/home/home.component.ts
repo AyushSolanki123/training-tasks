@@ -86,5 +86,21 @@ export class HomeComponent {
         },
       ],
     },
+    {
+      name: 'Day 6',
+      route: '/day6',
+      tasks: [
+        {
+          id: 1,
+          task: 'Store - Counter Actions',
+          route: '/day6/task1',
+        },
+        {
+          id: 2,
+          task: 'Store - CRUD Actions',
+          route: '/day6/task2',
+        },
+      ],
+    },
   ];
 }
