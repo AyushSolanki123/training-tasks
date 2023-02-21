@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./day4-task1.component.scss'],
 })
 export class Day4Task1Component {
-  show: boolean = false;
+  show = false;
 }

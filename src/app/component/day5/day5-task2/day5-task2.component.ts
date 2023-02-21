@@ -9,7 +9,7 @@ import { BookService } from './book.service';
 })
 export class Day5Task2Component implements OnInit {
   books!: Book[];
-  errorMessage: string = '';
+  errorMessage = '';
 
   constructor(private bookService: BookService) {}
 

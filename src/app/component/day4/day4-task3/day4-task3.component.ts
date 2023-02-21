@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./day4-task3.component.scss'],
 })
 export class Day4Task3Component {
-  count: number = 10;
-  sent: boolean = false;
+  count = 10;
+  sent = false;
 
   output(count: number) {
     this.count = count;

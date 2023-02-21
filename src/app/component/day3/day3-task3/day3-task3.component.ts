@@ -12,7 +12,6 @@ export class Day3Task3Component implements OnInit {
   age!: number;
   employees!: Employee[];
   EmployeeService!: TaskServiceService;
-  constructor() {}
 
   ngOnInit(): void {
     this.EmployeeService = new TaskServiceService();

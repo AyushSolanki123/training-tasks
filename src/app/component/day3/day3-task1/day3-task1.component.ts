@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class Day3Task1Component implements OnInit {
   registerForm!: FormGroup;
-  isSubmit: boolean = false;
+  isSubmit = false;
 
   constructor(private formBuilder: FormBuilder) {}
 

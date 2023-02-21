@@ -30,10 +30,9 @@ export class TaskServiceService {
       address: 'Chennai',
     },
   ];
-  constructor() {}
 
   updateEmployee(id: number, reqBody: any): void {
-    let index = this.data.findIndex((e) => e.empId === id);
+    const index = this.data.findIndex((e) => e.empId === id);
     let emp = this.data[index];
     emp = Object.assign(emp, reqBody);
     this.data[index] = emp;

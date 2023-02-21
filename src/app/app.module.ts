@@ -46,7 +46,7 @@ export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function (state, action) {
     console.log('previous state:', state);
     console.log('action: ', action);
-    let nextState = reducer(state, action);
+    const nextState = reducer(state, action);
     console.log('current state: ', state);
     return nextState;
   };
