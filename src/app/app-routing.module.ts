@@ -23,6 +23,9 @@ import { Day6Component } from './component/day6/day6.component';
 import { Day6Task1Component } from './component/day6/day6-task1/day6-task1.component';
 import { Day6Task2Component } from './component/day6/day6-task2/day6-task2.component';
 import { Day6Task3Component } from './component/day6/day6-task3/day6-task3.component';
+import { Day7Component } from './component/day7/day7.component';
+import { Day7Task1Component } from './component/day7/day7-task1/day7-task1.component';
+import { Day7Task2Component } from './component/day7/day7-task2/day7-task2.component';
 
 const routes: Routes = [
   {
@@ -84,6 +87,14 @@ const routes: Routes = [
       { path: 'task1', component: Day6Task1Component },
       { path: 'task2', component: Day6Task2Component },
       { path: 'task3', component: Day6Task3Component },
+    ],
+  },
+  {
+    path: 'day7',
+    children: [
+      { path: '', component: Day7Component },
+      { path: 'task1', component: Day7Task1Component },
+      { path: 'task2', component: Day7Task2Component },
     ],
   },
   {

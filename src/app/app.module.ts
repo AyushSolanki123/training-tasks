@@ -41,6 +41,9 @@ import { Day6Task2Component } from './component/day6/day6-task2/day6-task2.compo
 import { reducers } from './component/day6/store';
 import { ProductEffects } from './component/day6/store/effects/product.effects';
 import { Day6Task3Component } from './component/day6/day6-task3/day6-task3.component';
+import { Day7Component } from './component/day7/day7.component';
+import { Day7Task1Component } from './component/day7/day7-task1/day7-task1.component';
+import { Day7Task2Component } from './component/day7/day7-task2/day7-task2.component';
 
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function (state, action) {
@@ -88,6 +91,9 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     Day6Task1Component,
     Day6Task2Component,
     Day6Task3Component,
+    Day7Component,
+    Day7Task1Component,
+    Day7Task2Component,
   ],
   imports: [
     BrowserModule,

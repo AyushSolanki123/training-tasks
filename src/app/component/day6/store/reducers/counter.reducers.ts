@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createReducer, on } from '@ngrx/store';
 import {
   increment,
@@ -26,10 +27,10 @@ const _counterReducer = createReducer(
   on(multiplyby2, (state) => {
     return { ...state, counter: state.counter * 2 };
   }),
-  on(multiply, (state, arg: any) => {
+  on(multiply, (state, arg) => {
     return { ...state, counter: arg.multiply * state.counter };
   }),
-  on(reset, (state) => initialState)
+  on(reset, () => initialState)
 );
 
 export function counterReducer(state: any, action: any) {

@@ -107,5 +107,21 @@ export class HomeComponent {
         },
       ],
     },
+    {
+      name: 'Day 7',
+      route: '/day7',
+      tasks: [
+        {
+          id: 1,
+          task: 'RxJs - Product List Task',
+          route: '/day7/task1',
+        },
+        {
+          id: 2,
+          task: 'RxJs - Candidate List Task',
+          route: '/day6/task2',
+        },
+      ],
+    },
   ];
 }
