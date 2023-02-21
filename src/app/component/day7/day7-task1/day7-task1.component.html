@@ -1,1 +1,38 @@
-<p>day7-task1 works!</p>
+<div class="container-fluid">
+  <div class="heading text-center">
+    <h2>
+      Problem Statement: Given a list of products use rxjs operators to do the
+      following <br />
+      <ul>
+        <li>1) Display the names of all the products in tabular format</li>
+        <li>2) Display the sum of prices of all products</li>
+      </ul>
+    </h2>
+  </div>
+
+  <div class="constrain card m-a p-3">
+    <div class="names mb-3 text-center">
+      <h4>Product Names List</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Product Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of productNameList; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item | titlecase }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="price text-center mb-3">
+      <h5>
+        Sum of Prices of all products:
+        {{ totalPrice$ | async | currency : "INR" }}
+      </h5>
+    </div>
+  </div>
+</div>
