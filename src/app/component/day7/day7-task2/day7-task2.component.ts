@@ -47,14 +47,12 @@ export class Day7Task2Component {
       .pipe(filter((candidate) => candidate.city === 'Pune'))
       .subscribe(
         (value) => this.puneListCandidates.push(value),
-        (error) => console.log('Pune Candidates List Observable error:', error),
-        () => console.log('Completed')
+        (error) => console.log('Pune Candidates List Observable error:', error)
       );
 
     this.candidateList.subscribe(
       (value) => this.filteredListByTechnology.push(value),
-      (error) => console.log('Filtered List Observable error:', error),
-      () => console.log('Completed')
+      (error) => console.log('Filtered List Observable error:', error)
     );
   }
 
@@ -64,8 +62,7 @@ export class Day7Task2Component {
       .pipe(filter((candidate) => candidate.technology == this.techFilter))
       .subscribe(
         (value) => list.push(value),
-        (error) => console.log('Candidates List Observable error:', error),
-        () => console.log('Completed')
+        (error) => console.log('Candidates List Observable error:', error)
       );
     return list;
   }
@@ -87,8 +84,7 @@ export class Day7Task2Component {
       .pipe(filter((value) => value.experience == this.highestExperience))
       .subscribe(
         (value) => list.push(value),
-        (error) => console.log('Candidates List Observable error:', error),
-        () => console.log('Completed')
+        (error) => console.log('Candidates List Observable error:', error)
       );
 
     return list;
@@ -97,17 +93,22 @@ export class Day7Task2Component {
     const list: Candidate[] = [];
     this.candidateList.pipe(filter((value) => value.experience == 0)).subscribe(
       (value) => list.push(value),
-      (error) => console.log('Candidates List Observable error:', error),
-      () => console.log('Completed')
+      (error) => console.log('Candidates List Observable error:', error)
     );
 
     return list;
   }
 
   get sortedList() {
-    const list: Candidate[] = [];
-    this.candidateList.subscribe((value: Candidate) => list.push(value));
-    return list.sort((a, b) => (a.experience < b.experience ? -1 : 1));
+    let list: Candidate[] = [];
+
+    this.candidateList
+      .pipe(
+        toArray(),
+        map((c) => c.sort((a, b) => a.experience - b.experience))
+      )
+      .subscribe((v) => (list = v));
+    return list;
   }
 
   get candidateCountCityWise() {
