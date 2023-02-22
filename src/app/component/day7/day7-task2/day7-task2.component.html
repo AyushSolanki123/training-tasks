@@ -1,1 +1,194 @@
-<p>day7-task2 works!</p>
+<div class="container-fluid">
+  <div class="heading text-center">
+    <h2>
+      Problem Statement: Given a list of products use rxjs operators to do the
+      following <br />
+      <h4>
+        <ul>
+          <li>1) Display the list of Pune Candidates</li>
+          <li>2) Display the candidate count by Technical Expertise</li>
+          <li>3) List Candidate with Highest Experience</li>
+          <li>4) Find Highest years of Experience</li>
+          <li>5) Display list of fresher Candidates</li>
+          <li>6) Display list in ascending order of experience</li>
+          <li>7) Display candidate count citywise</li>
+        </ul>
+      </h4>
+    </h2>
+  </div>
+
+  <div class="constrain card m-a p-3">
+    <div class="names mb-3 text-center">
+      <h4>1) List of Pune Candidates</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Candidate Name</th>
+            <th>Technology</th>
+            <th>City</th>
+            <th>Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of puneListCandidates; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name | titlecase }}</td>
+            <td>{{ item.technology | titlecase }}</td>
+            <td>{{ item.city | titlecase }}</td>
+            <th>{{ item.experience }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="names mb-3 text-center">
+      <h4>2a) Count of Candidates Technology wise</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Technology</th>
+            <th>Candidate Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let item of candidateCountFilteredByTechnology;
+              let i = index
+            "
+          >
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.tech | titlecase }}</td>
+            <td>{{ item.count }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="names mb-3 text-center">
+      <div class="row">
+        <div class="col-sm-8">
+          <h4>2b) List of Candidates Using</h4>
+        </div>
+        <div class="col-sm-4">
+          <select class="form-select" [(ngModel)]="techFilter">
+            <option value="Java" selected>Java</option>
+            <option value="Angular">Angular</option>
+            <option value="React">React</option>
+          </select>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Candidate Name</th>
+            <th>Technology</th>
+            <th>City</th>
+            <th>Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of filteredListByTechnology; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name | titlecase }}</td>
+            <td>{{ item.technology | titlecase }}</td>
+            <td>{{ item.city | titlecase }}</td>
+            <th>{{ item.experience }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="names mb-3 text-center">
+      <h4>3) Candidates with highest experience</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Candidate Name</th>
+            <th>Technology</th>
+            <th>City</th>
+            <th>Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of highestExperienceCandidates; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name | titlecase }}</td>
+            <td>{{ item.technology | titlecase }}</td>
+            <td>{{ item.city | titlecase }}</td>
+            <th>{{ item.experience }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mb-3 text-center">
+      <h4>4) Highest years of Experience : {{ highestExperience }}</h4>
+    </div>
+    <div class="names mb-3 text-center">
+      <h4>5) Fresher Candidates:</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Candidate Name</th>
+            <th>Technology</th>
+            <th>City</th>
+            <th>Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of fresherCandidates; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name | titlecase }}</td>
+            <td>{{ item.technology | titlecase }}</td>
+            <td>{{ item.city | titlecase }}</td>
+            <th>{{ item.experience }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="names mb-3 text-center">
+      <h4>6) Sorted list</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Candidate Name</th>
+            <th>Technology</th>
+            <th>City</th>
+            <th>Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of sortedList; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name | titlecase }}</td>
+            <td>{{ item.technology | titlecase }}</td>
+            <td>{{ item.city | titlecase }}</td>
+            <th>{{ item.experience }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="names mb-3 text-center">
+      <h4>7) Count of Candidates city wise</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>City</th>
+            <th>Candidate Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of candidateCountCityWise; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.city | titlecase }}</td>
+            <td>{{ item.count }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

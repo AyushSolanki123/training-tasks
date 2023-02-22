@@ -19,7 +19,7 @@ export class Day7Component {
       {
         id: 2,
         task: 'RxJs - Candidate List Task',
-        route: '/day6/task2',
+        route: '/day7/task2',
       },
     ],
   };
