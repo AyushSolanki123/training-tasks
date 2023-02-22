@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div>
+    <h3>{{ title }}</h3>
+  </div>
+  <div>
+    <button class="btn btn-primary" (click)="show()">Show</button>
+    <button class="mx-3 btn btn-danger" (click)="hide()">Hide</button>
+  </div>
+  <div *ngIf="value">
+    <h5>{{ msg }}</h5>
+  </div>
+</div>

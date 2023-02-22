@@ -11,13 +11,18 @@
       <div class="input-group">
         <label for="password">Password</label>
         <input type="text" id="password" [(ngModel)]="password" />
-        <div appPasswordCheck [paswordCheck]="password"></div>
+        <div
+          id="password-directive"
+          appPasswordCheck
+          [paswordCheck]="password"
+        ></div>
       </div>
       <div class="input-group">
         <label for="confirmPassword">Confirm Password</label> <br />
         <input type="text" id="confirmPassword" [(ngModel)]="confirmPassword" />
       </div>
       <div
+        id="confirm-directive"
         appConfirmPasswordCheck
         [paswordCheck]="password"
         [confirmPasswordCheck]="confirmPassword"

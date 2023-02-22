@@ -44,6 +44,7 @@ import { Day6Task3Component } from './component/day6/day6-task3/day6-task3.compo
 import { Day7Component } from './component/day7/day7.component';
 import { Day7Task1Component } from './component/day7/day7-task1/day7-task1.component';
 import { Day7Task2Component } from './component/day7/day7-task2/day7-task2.component';
+import { TestingComponent } from './component/testing/testing.component';
 
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function (state, action) {
@@ -94,6 +95,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     Day7Component,
     Day7Task1Component,
     Day7Task2Component,
+    TestingComponent,
   ],
   imports: [
     BrowserModule,
