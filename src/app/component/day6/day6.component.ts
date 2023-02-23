@@ -23,7 +23,7 @@ export class Day6Component {
       },
       {
         id: 3,
-        task: 'Store - CRUD Actions',
+        task: 'Store - Cart Operations',
         route: '/day6/task3',
       },
     ],

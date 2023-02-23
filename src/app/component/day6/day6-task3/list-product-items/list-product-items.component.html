@@ -1,0 +1,19 @@
+<div class="card p-3">
+  <div class="image m-a">
+    <img
+      [src]="item.image"
+      [alt]="item.name"
+      style="width: 100%; height: 100%"
+    />
+  </div>
+  <div class="details text-center">
+    <h4>{{ item.name }}</h4>
+    <h6>{{ item.brand }}</h6>
+    <h6>Price: {{ item.price | currency : "INR" }}</h6>
+    <div class="buttons">
+      <button class="btn btn-primary" (click)="removeItem()">-</button>
+      <span class="mx-3">{{ quantity }}</span>
+      <button class="btn btn-primary" (click)="addItem()">+</button>
+    </div>
+  </div>
+</div>

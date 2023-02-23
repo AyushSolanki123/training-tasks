@@ -1,1 +1,59 @@
-<p>day6-task3 works!</p>
+<div class="container-fluid">
+  <div class="heading text-center mb-3">
+    <h2>
+      Problem Statement: Use ngrx store to implement cart functionality such as
+      add to cart, remove from cart and display cart using actions, reducer and
+      selectors
+    </h2>
+  </div>
+
+  <div *ngIf="!isCart; else elseBlock" class="card m-a p-3 container-fluid">
+    <div class="row">
+      <div
+        *ngFor="let item of items$ | async"
+        class="col-lg-3 col-md-4 col-sm-6"
+      >
+        <app-list-product-items
+          [item]="item"
+          (add)="addItemToCart($event)"
+          (remove)="removeItemFromCart($event)"
+        ></app-list-product-items>
+      </div>
+    </div>
+    <div class="m-a my-3">
+      <button class="btn btn-success" (click)="isCart = true">
+        Go to Cart
+        <span class="badge text-bg-secondary">
+          {{ cartItemsCount$ | async }}
+        </span>
+      </button>
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <div class="card m-a p-3 container-fluid text-center">
+      <h4>Your Cart details</h4>
+      <div class="my-3">
+        <table class="table table-striped">
+          <thead>
+            <th>Sr. No</th>
+            <th>Product Id</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartItems$ | async; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.itemId }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.totalPrice | currency : "INR" }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="m-a my-3">
+        <button class="btn btn-primary" (click)="isCart = false">Back</button>
+      </div>
+    </div>
+  </ng-template>
+</div>
