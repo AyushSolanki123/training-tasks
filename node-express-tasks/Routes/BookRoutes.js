@@ -26,7 +26,7 @@ router.post(
   bookController.addBook
 );
 
-router.put("/:bookid", verifyToken, bookController.updateBook);
+router.put("/:bookId", verifyToken, bookController.updateBook);
 
 router.delete("/:bookId", verifyToken, bookController.deleteBook);
 

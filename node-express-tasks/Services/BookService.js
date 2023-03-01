@@ -5,7 +5,7 @@ const Book = require("../Models/Book").model;
 
 function addBook(reqBody) {
   return new Promise((resolve, reject) => {
-    const _reqBody = reqBody;
+    let _reqBody = reqBody;
     Book.find()
       .count()
       .then((count) => {
@@ -13,9 +13,10 @@ function addBook(reqBody) {
         return Book.create(_reqBody);
       })
       .then((response) => resolve(response))
-      .catch((error) =>
-        reject(new ErrorBody(500, error.message || "Internal Server Error"))
-      );
+      .catch((error) => {
+        console.log(error);
+        reject(new ErrorBody(500, error.message || "Internal Server Error"));
+      });
   });
 }
 
@@ -30,13 +31,13 @@ function getBookById(id) {
 function updateBook(id, reqBody) {
   return Book.findOneAndUpdate(
     { bookId: id },
-    { $set: reqBody },
+    { $set: { ...reqBody } },
     { new: true }
   ).populate("issuedBy");
 }
 
 function deleteBook(id) {
-  return Book.findByIdAndUpdate(
+  return Book.findOneAndUpdate(
     { bookId: id },
     { $set: { isDeleted: true } },
     { new: true }
@@ -77,7 +78,7 @@ function listUserIssuedBooks(userId) {
     },
     {
       $match: {
-        "issuedby._id": mongoose.Types.ObjectId(userId),
+        "issuedBy._id": mongoose.Types.ObjectId(userId),
         isDeleted: false,
       },
     },

@@ -51,6 +51,7 @@ function listBooks(req, res, next) {
 
 function listUserIssuedBooks(req, res, next) {
   const { userId } = req.query;
+  console.log(userId);
   BookService.listUserIssuedBooks(userId)
     .then((response) => {
       res.status(200);
