@@ -15,6 +15,11 @@ const BookSchema = new Schema(
       type: Schema.Types.String,
       required: true,
     },
+    price: {
+      type: Schema.Types.Number,
+      required: true,
+      default: 39.99,
+    },
     issuedBy: {
       type: Schema.Types.ObjectId,
       ref: "User",
